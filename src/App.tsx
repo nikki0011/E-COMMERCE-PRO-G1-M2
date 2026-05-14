@@ -7,7 +7,7 @@ function App() {
     <>
       <BrowserRouter>
         <Navbar />
-        <main className="grow min-h-screen bg-linear-to-br from-[#d6d3d1] to-[#a8a6a4]"></main>
+        <main className="grow bg-linear-to-br from-[#d6d3d1] to-[#a8a6a4]"></main>
         <Footer />
         </BrowserRouter>
     </>
