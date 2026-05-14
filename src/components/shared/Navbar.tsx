@@ -9,12 +9,12 @@ const Navbar = () => {
   const navLinkStyles = ({ isActive }: { isActive: boolean }) =>
     `block py-2 px-3 transition-colors duration-200 md:p-0 ${
       isActive
-        ? "text-blue-500 font-semibold"
-        : "text-zinc-300 hover:text-blue-400"
+        ? "text-white-800 font-semibold"
+        : "text-zinc-300 hover:text-neutral-400"
     }`;
 
   return (
-    <nav className="bg-neutral-800 border-b border-zinc-800 text-zinc-100 py-3 sticky top-0 z-50">
+    <nav className="bg-neutral-600 text-zinc-100 text-lg py-3 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
