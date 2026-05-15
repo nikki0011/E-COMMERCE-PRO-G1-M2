@@ -1,8 +1,9 @@
 import { FaSearch } from "react-icons/fa";
+import Cards from "../services/Cards";
 
 const Inicio = () => {
   return (
-    <section className="space-y-8 animate-fadeIn container  md:mx-auto mt-6">
+    <section className="space-y-8 animate-fadeIn container  w-full xs:mx-auto   mt-6">
       {/* Encabezado con estilo moderno */}
       <div className="flex flex-col md:flex-row items-center md:items-center justify-center md:justify-center border-b border-zinc-800 pb-5 gap-4 ">
         <div>
@@ -22,7 +23,15 @@ const Inicio = () => {
       <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
       
       </div>
+      <div className="items-center">
+      <div className="grid grid-cols-1 sm:grid-cols-2  md:grid-cols-3 lg:grid-cols-4  gap-3 my-3 ">
+      <Cards></Cards>
+      
+      </div>
+</div>
+
     </section>
+    
   );
 };
 
