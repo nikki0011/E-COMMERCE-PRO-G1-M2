@@ -48,8 +48,8 @@ const Navbar = () => {
                 Inicio
               </NavLink>
 
-              <NavLink to="/nosotros" className={navLinkStyles}>
-                Nosotros
+              <NavLink to="/administrador" className={navLinkStyles}>
+                Administrador
               </NavLink>
 
               <NavLink to="/login" className={navLinkStyles}>
@@ -78,11 +78,11 @@ const Navbar = () => {
           </NavLink>
 
           <NavLink
-            to="/nosotros"
+            to="/administrador"
             className={navLinkStyles}
             onClick={() => setIsMenuOpen(false)}
           >
-            Nosotros
+            Administrador
           </NavLink>
 
           <NavLink
