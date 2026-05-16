@@ -1,4 +1,5 @@
 import { FaSearch } from "react-icons/fa";
+import Error404 from "./Error404";
 
 const Inicio = () => {
   return (
