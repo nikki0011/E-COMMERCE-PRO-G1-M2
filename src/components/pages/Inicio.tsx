@@ -1,5 +1,5 @@
 import { FaSearch } from "react-icons/fa";
-import Cards from "../services/Cards";
+import GridCards from "./GridCards";
 
 const Inicio = () => {
   return (
@@ -23,12 +23,7 @@ const Inicio = () => {
       <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
       
       </div>
-      <div className="items-center">
-      <div className="grid grid-cols-1 sm:grid-cols-2  md:grid-cols-3 lg:grid-cols-4  gap-3 my-3 ">
-      <Cards></Cards>
-      
-      </div>
-</div>
+      <GridCards></GridCards>
 
     </section>
     
