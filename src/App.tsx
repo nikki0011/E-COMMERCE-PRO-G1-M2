@@ -7,15 +7,17 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <Navbar />
-        <main className="grow bg-linear-to-br from-[#d6d3d1] to-[#a8a6a4]">
+        <div className="bg-linear-to-br from-[#d6d3d1] to-[#a8a6a4]">
+      <Navbar />
+        <main className="grow container mx-auto ">
           <Routes>
             <Route path="/" element={<Inicio></Inicio>}/>
-            
+         
           </Routes>
 
         </main>
         <Footer />
+        </div>
       </BrowserRouter>
     </>
   );
