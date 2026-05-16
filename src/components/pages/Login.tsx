@@ -1,7 +1,7 @@
 
 const Login = () => {
   return (
-    <section className="flex grow items-center justify-center py-12 px-4 sm:px-6 md:px-30 lg:px-60 xl:px-150 animate-fadeIn">
+    <section className="flex grow items-center justify-center py-12 px-4 sm:px-6 md:px-30 lg:px-60 xl:px-100 animate-fadeIn">
       <div className=" w-full space-y-8 bg-neutral-600 p-8 rounded-2xl border border-neutral-800 shadow-2xl backdrop-blur-sm">
         <div className="mb-0">
           <h2 className=" text-center text-3xl font-extrabold text-white">
