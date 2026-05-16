@@ -20,7 +20,7 @@ const Navbar = () => {
           {/* Logo */}
           <div className="shrink-0 flex items-center gap-2 text-xl tracking-wider">
            <AiOutlineDoubleLeft className="text-slate-100 text-2xl" />
-            <Link to={"/"} className="font-bold uppercase">
+            <Link to={"/"} className="font-bold uppercase text-2xl">
               hard stocks{" "}
             </Link>
           </div>
