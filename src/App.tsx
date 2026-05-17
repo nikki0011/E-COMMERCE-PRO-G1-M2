@@ -4,6 +4,7 @@ import Footer from "./components/shared/Footer";
 import Inicio from "./components/pages/Inicio";
 import Error404 from "./components/pages/Error404";
 import Login from "./components/pages/Login";
+import DetalleProducto from "./components/pages/DetalleProducto";
 
 function App() {
   return (
@@ -15,7 +16,9 @@ function App() {
             <Routes>
               <Route path="/" element={<Inicio></Inicio>} />
               <Route path="/login" element={<Login></Login>} />
+              <Route path="/DetalleProducto" element={<DetalleProducto></DetalleProducto>} />
               <Route path="*" element={<Error404></Error404>} />
+
             </Routes>
           </main>
           <Footer />

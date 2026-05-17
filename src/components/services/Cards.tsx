@@ -5,6 +5,7 @@ import { IoHeartOutline } from "react-icons/io5";
 
 const Cards = () => {
   return (
+    
     <Card
       className="group bg-zinc-900 rounded-xl overflow-hidden border border-zinc-800 hover:border-blue-500/50 transition-all duration-300 shadow-lg hover:shadow-black-500/10 flex flex-col h-full"
       imgAlt="Imagen Articulo"
