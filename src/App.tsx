@@ -5,6 +5,7 @@ import Inicio from "./components/pages/Inicio";
 import Error404 from "./components/pages/Error404";
 import Login from "./components/pages/Login";
 import FormularioABM from "./components/pages/FormularioABM";
+import DetalleProducto from "./components/pages/DetalleProducto";
 import { useEffect, useState } from "react";
 import { AppContext } from "./context/AppContext";
 import type { Producto, ProductoFormData } from "./interfaces/productos";
