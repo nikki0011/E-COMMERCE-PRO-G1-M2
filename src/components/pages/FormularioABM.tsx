@@ -67,15 +67,15 @@ const FormularioProducto: React.FC<FormularioProductoProps>= ({ titulo }: Formul
 
   // Clase utilitaria para inputs
   const inputClass = (hasError: boolean) => `
-    w-full px-4 py-2.5 bg-zinc-950 border rounded-lg text-zinc-100 
-    focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all
+    w-full px-4 py-2.5 bg-neutral-900 border rounded-lg text-zinc-100 
+    focus:outline-none focus:ring-2 focus:ring-slate-300/30 transition-all
     ${hasError ? "border-red-500" : "border-zinc-700"}
   `;
 
   return (
-    <section className="max-w-4xl mx-auto animate-fadeIn my-4">
+    <section className="max-w-4xl mx-auto animate-fadeIn my-6">
       <div className="bg-zinc-900/50 p-8 rounded-2xl border border-zinc-800 shadow-xl">
-        <h1 className="text-3xl font-bold text-white mb-8 border-b border-zinc-800 pb-4">
+        <h1 className="text-4xl font-bold text-white mb-8 border-b border-zinc-800 pb-4">
           {titulo}
         </h1>
 
@@ -83,12 +83,12 @@ const FormularioProducto: React.FC<FormularioProductoProps>= ({ titulo }: Formul
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Nombre del Producto */}
             <div className="md:col-span-2">
-              <label className="block text-sm font-medium text-zinc-300 mb-2">
-                Nombre del Producto*
+              <label className="block text-lg font-medium text-zinc-300 mb-2">
+                Nombre del Producto(*)
               </label>
               <input
                 type="text"
-                placeholder="Ej: Diseño de sitio web institucional"
+                placeholder="Ej: Laptop Acer V16"
                 className={inputClass(!!errors.nombreProducto)}
                 {...register("nombreProducto", {
                   required: "El nombre es obligatorio",
@@ -103,8 +103,8 @@ const FormularioProducto: React.FC<FormularioProductoProps>= ({ titulo }: Formul
 
             {/* Precio */}
             <div>
-              <label className="block text-sm font-medium text-zinc-300 mb-2">
-                Precio*
+              <label className="block text-lg font-medium text-zinc-300 mb-2">
+                Precio(*)
               </label>
               <input
                 type="number"
@@ -123,7 +123,7 @@ const FormularioProducto: React.FC<FormularioProductoProps>= ({ titulo }: Formul
 
             {/* Categoría */}
             <div>
-              <label className="block text-sm font-medium text-zinc-300 mb-2">
+              <label className="block text-lg font-medium text-zinc-300 mb-2">
                 Categoría*
               </label>
               <select
@@ -136,13 +136,13 @@ const FormularioProducto: React.FC<FormularioProductoProps>= ({ titulo }: Formul
                   Seleccione una opción
                 </option>
                 <option value="Desarrollo Web" className="bg-zinc-900">
-                  Desarrollo Web
+                  Laptops
                 </option>
                 <option value="Backend & API" className="bg-zinc-900">
-                  Backend & API
+                  PC's Armadas
                 </option>
                 <option value="Consultoría" className="bg-zinc-900">
-                  Consultoría
+                  Componentes 
                 </option>
               </select>
               <p className="text-red-500 text-xs mt-1 italic">
@@ -153,7 +153,7 @@ const FormularioProducto: React.FC<FormularioProductoProps>= ({ titulo }: Formul
             {/* URL Imagen */}
             <div className="md:col-span-2">
               <label className="block text-sm font-medium text-zinc-300 mb-2">
-                URL de Imagen*
+                URL de Imagen(*)
               </label>
               <input
                 type="text"
@@ -180,7 +180,7 @@ const FormularioProducto: React.FC<FormularioProductoProps>= ({ titulo }: Formul
               </label>
               <textarea
                 rows={4}
-                placeholder="Describa el servicio detalladamente..."
+                placeholder="Describa el producto detalladamente..."
                 className={inputClass(!!errors.descripcion)}
                 {...register("descripcion", {
                   required: "La descripción es obligatoria",
@@ -197,7 +197,7 @@ const FormularioProducto: React.FC<FormularioProductoProps>= ({ titulo }: Formul
           <div className="pt-4">
             <button
               type="submit"
-              className="w-full md:w-auto px-8 py-3 bg-slate-900 hover:bg-slate-700 text-white font-bold rounded-lg transition-all active:scale-95 shadow-lg ring-slate-400/50 cursor-pointer"
+              className="w-full md:w-auto px-8 py-3 bg-slate-900 hover:bg-slate-700 text-white font-bold rounded-lg transition-all active:scale-95 shadow-lg cursor-pointer"
             >
               Guardar Producto
             </button>
