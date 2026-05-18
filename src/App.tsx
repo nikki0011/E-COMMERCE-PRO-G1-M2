@@ -5,6 +5,7 @@ import Inicio from "./components/pages/Inicio";
 import Error404 from "./components/pages/Error404";
 import Login from "./components/pages/Login";
 import FormularioABM from "./components/pages/FormularioABM";
+import DetalleProducto from "./components/pages/DetalleProducto";
 import { useEffect, useState } from "react";
 import { AppContext } from "./context/AppContext";
 import type { Producto, ProductoFormData } from "./interfaces/productos";
@@ -78,7 +79,9 @@ function App() {
               <Route path="/formularioabm" element={<FormularioABM titulo="Crear Producto" />} />
               <Route path="/" element={<Inicio></Inicio>} />
               <Route path="/login" element={<Login></Login>} />
+              <Route path="/DetalleProducto" element={<DetalleProducto></DetalleProducto>} />
               <Route path="*" element={<Error404></Error404>} />
+
             </Routes>
           </main>
           <Footer />
