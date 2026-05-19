@@ -1,21 +1,32 @@
 
 import { Card } from "flowbite-react";
 import { IoHeartOutline } from "react-icons/io5";
+import type { Producto } from "../../interfaces/productos";
+interface CardProductoProps {
+  producto: Producto;
+}
 
-
-const Cards = () => {
+const Cards = ({producto}: CardProductoProps )  => {
+  
+  const formatearPrecio = (valor: number) => {
+    return new Intl.NumberFormat('es-AR', {
+      style: 'currency',
+      currency: 'ARS',
+    }).format(valor);
+  };
+  
   return (
     
     <Card
-      className="group bg-zinc-900 rounded-xl overflow-hidden border border-zinc-800 hover:border-blue-500/50 transition-all duration-300 shadow-lg hover:shadow-black-500/10 flex flex-col h-full"
-      imgAlt="Imagen Articulo"
-      imgSrc="ArtImangen"
+      className="group bg-zinc-900 rounded-xl overflow-hidden border border-zinc-800 hover:border-blue-500/50 transition-all duration-300 shadow-lg hover:shadow-black-500/10 flex flex-col w-full"
+      imgAlt={producto.nombreProducto}
+      imgSrc={producto.imagen}
     >
         <h6 className="text-xs font-semibold tracking-tight text-gray-900 dark:text-white">
-          Categoria:
+          {producto.categoria}
         </h6>
         <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
-          Descripcion
+          {producto.descripcion}
         </h5>
       
       <div className="mb-5 mt-2.5 flex items-center ">
@@ -65,7 +76,7 @@ const Cards = () => {
           <IoHeartOutline />
       </div>
       <div className="flex items-center justify-between">
-        <span className="text-3xl font-bold text-gray-900 dark:text-white">Precio</span>
+        <span className="text-3xl font-bold text-gray-900 dark:text-white">{producto.precio}</span>
         
         <button className="rounded-lg bg-cyan-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-cyan-800 focus:outline-none focus:ring-4 focus:ring-cyan-300 dark:bg-cyan-600 dark:hover:bg-cyan-700 dark:focus:ring-cyan-800
         active:scale-95">
