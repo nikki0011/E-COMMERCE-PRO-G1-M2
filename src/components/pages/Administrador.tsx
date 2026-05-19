@@ -59,9 +59,9 @@ const Administrador = () => {
               <tr>
                 <td
                   colSpan={4}
-                  className="px-6 py-12 text-center text-zinc-500 italic"
+                  className="px-6 py-12 text-center text-slate-900 font-semibold"
                 >
-                  No hay servicios registrados para administrar.
+                  No hay productos registrados para administrar.
                 </td>
               </tr>
             )}
