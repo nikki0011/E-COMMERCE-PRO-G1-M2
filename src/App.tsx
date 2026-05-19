@@ -5,6 +5,7 @@ import Inicio from "./components/pages/Inicio";
 import Error404 from "./components/pages/Error404";
 import Login from "./components/pages/Login";
 import FormularioABM from "./components/pages/FormularioABM";
+import Administrador from "./components/pages/Administrador";
 import DetalleProducto from "./components/pages/DetalleProducto";
 import { useEffect, useState } from "react";
 import { AppContext } from "./context/AppContext";
@@ -74,11 +75,12 @@ function App() {
       <BrowserRouter>
         <div className="bg-linear-to-br from-[#d6d3d1] to-[#a8a6a4] min-h-screen flex flex-col">
           <Navbar />
-          <main className="grow container mx-auto flex items-center ">
+          <main className="grow container mx-auto flex  ">
             <Routes>
               <Route path="/formularioabm" element={<FormularioABM titulo="Crear Producto" />} />
               <Route path="/" element={<Inicio></Inicio>} />
               <Route path="/login" element={<Login></Login>} />
+              <Route path="/administrador" element={<Administrador></Administrador>} />
               <Route path="/DetalleProducto" element={<DetalleProducto></DetalleProducto>} />
               <Route path="*" element={<Error404></Error404>} />
 
