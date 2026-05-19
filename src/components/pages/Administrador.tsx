@@ -1,8 +1,11 @@
 import PanelAdmin from "../services/PanelAdmin";
 import { Link } from "react-router";
+import { LuCirclePlus } from "react-icons/lu";
+import { useAppContext } from "../../context/AppContext";
 
 
 const Administrador = () => {
+  const {productos} = useAppContext();
     return (
         <section className="container animate-fadeIn space-y-6 mt-8">
       {/* Header de la sección */}
@@ -19,7 +22,7 @@ const Administrador = () => {
           className="bg-slate-800 hover:bg-slate-700 text-white px-5 py-2.5 rounded-xl font-bold transition-all shadow-lg shadow-blue-900/20 active:scale-95 flex items-center gap-2"
           to="/formularioabm"
         >
-          <i className="bi bi-plus-lg"></i>
+          <LuCirclePlus/>
           Crear Producto
         </Link>
       </div>
@@ -44,7 +47,24 @@ const Administrador = () => {
             </tr>
           </thead>
           <tbody className="divide-y divide-neutral-800/50">
-            {<PanelAdmin></PanelAdmin>}
+            {productos.length > 0 ? (
+              productos.map((producto, indice) => (
+                <PanelAdmin
+                  key={producto.id}
+                  producto={producto}
+                  fila={indice + 1}
+                />
+              ))
+            ) : (
+              <tr>
+                <td
+                  colSpan={4}
+                  className="px-6 py-12 text-center text-zinc-500 italic"
+                >
+                  No hay servicios registrados para administrar.
+                </td>
+              </tr>
+            )}
           </tbody>
         </table>
       </div>
