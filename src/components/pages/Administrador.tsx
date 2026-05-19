@@ -3,7 +3,7 @@ import PanelAdmin from "../services/PanelAdmin";
 
 const Administrador = () => {
     return (
-        <section className="container animate-fadeIn space-y-6">
+        <section className="container animate-fadeIn space-y-6 mt-8">
       {/* Header de la sección */}
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 bg-stone-800/70 p-6 rounded-2xl border border-neutral-800">
         <div>
