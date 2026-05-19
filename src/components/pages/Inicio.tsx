@@ -32,7 +32,7 @@ const Inicio = () => {
           ))}
         </div>
       ) : (
-        <div className="flex flex-col items-center justify-center py-20 rounded-xl text-slate-600 font-bold tracking-wider uppercase text-2xl">
+        <div className="flex flex-col items-center justify-center py-20 rounded-xl border border-slate-900 text-slate-600 font-bold tracking-wider uppercase text-2xl">
             No se encontraron productos disponibles
         </div>
       )}
