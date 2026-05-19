@@ -11,8 +11,8 @@ const PanelAdmin = () => {
         $50
       </td>
       <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
-        <div className="flex gap-3">
-          <a className="text-amber-500 hover:text-amber-400 transition-colors flex items-center gap-1 font-bold text-lg">
+        <div className="flex justify-center gap-3">
+          <a className="text-slate-500 hover:text-amber-400 transition-colors flex items-center gap-1 font-bold text-lg">
             <i className="bi bi-pencil-square"></i> Editar
           </a>
           <button className="text-red-500 hover:text-red-400 transition-colors flex items-center gap-1 font-bold text-lg">

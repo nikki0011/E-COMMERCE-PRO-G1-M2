@@ -1,13 +1,14 @@
+import { Link } from "react-router"; 
 
 const Login = () => {
   return (
     <section className="flex grow items-center justify-center py-12 px-4 sm:px-6 md:px-30 lg:px-60 xl:px-100 animate-fadeIn">
       <div className=" w-full space-y-8 bg-neutral-600 p-8 rounded-2xl border border-neutral-800 shadow-2xl backdrop-blur-sm">
         <div className="mb-0">
-          <h2 className=" text-center text-3xl font-extrabold text-white">
+          <h1 className=" text-center text-3xl font-extrabold text-white">
             Iniciar Sesión
-          </h2>
-          <p className="mt-2 text-center text-sm text-zinc-400">
+          </h1>
+          <p className="mt-2 text-center text-lg text-zinc-400">
             Accede al panel de control de{" "}
             <span className="text-white font-semibold">HARD STOCK</span>
           </p>
@@ -17,7 +18,7 @@ const Login = () => {
             <div>
               <label
                 htmlFor="email"
-                className="block text-sm font-medium text-zinc-300 mb-1"
+                className="block text-lg font-medium text-zinc-300 mb-1"
               >
                 Correo Electrónico
               </label>
@@ -33,7 +34,7 @@ const Login = () => {
             <div>
               <label
                 htmlFor="password"
-                className="block text-sm font-medium text-zinc-300 mb-1"
+                className="block text-lg font-medium text-zinc-300 mb-1"
               >
                 Contraseña
               </label>
@@ -45,6 +46,9 @@ const Login = () => {
                 placeholder="••••••••"/>
               <p className="text-red-500 text-xs mt-1 italic">
               </p>
+            </div>
+            <div className="text-center text-lg">
+            <p>¿No tienes una cuenta? <Link to="/registro" className="text-slate-900 hover:underline text-center">Regístrate aquí</Link></p>
             </div>
           </div>
           <div>

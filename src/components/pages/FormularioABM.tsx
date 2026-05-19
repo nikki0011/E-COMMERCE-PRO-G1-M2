@@ -124,7 +124,7 @@ const FormularioProducto: React.FC<FormularioProductoProps>= ({ titulo }: Formul
             {/* Categoría */}
             <div>
               <label className="block text-lg font-medium text-zinc-300 mb-2">
-                Categoría*
+                Categoría(*)
               </label>
               <select
                 className={inputClass(!!errors.categoria)}
@@ -135,13 +135,13 @@ const FormularioProducto: React.FC<FormularioProductoProps>= ({ titulo }: Formul
                 <option value="" className="bg-zinc-900">
                   Seleccione una opción
                 </option>
-                <option value="Desarrollo Web" className="bg-zinc-900">
+                <option value="Laptops" className="bg-zinc-900">
                   Laptops
                 </option>
-                <option value="Backend & API" className="bg-zinc-900">
+                <option value="PC's Armadas" className="bg-zinc-900">
                   PC's Armadas
                 </option>
-                <option value="Consultoría" className="bg-zinc-900">
+                <option value="Componentes" className="bg-zinc-900">
                   Componentes 
                 </option>
               </select>
@@ -152,7 +152,7 @@ const FormularioProducto: React.FC<FormularioProductoProps>= ({ titulo }: Formul
 
             {/* URL Imagen */}
             <div className="md:col-span-2">
-              <label className="block text-sm font-medium text-zinc-300 mb-2">
+              <label className="block text-lg font-medium text-zinc-300 mb-2">
                 URL de Imagen(*)
               </label>
               <input
@@ -175,8 +175,8 @@ const FormularioProducto: React.FC<FormularioProductoProps>= ({ titulo }: Formul
 
             {/* Descripción */}
             <div className="md:col-span-2">
-              <label className="block text-sm font-medium text-zinc-300 mb-2">
-                Descripción*
+              <label className="block text-lg font-medium text-zinc-300 mb-2">
+                Descripción(*)
               </label>
               <textarea
                 rows={4}
