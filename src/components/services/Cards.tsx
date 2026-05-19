@@ -15,11 +15,15 @@ const Cards = ({ producto }: CardProductoProps) => {
   };
 
   return (
-    <Card
-      className="group bg-zinc-900 rounded-xl border border-zinc-800 hover:border-blue-500/50 transition-all duration-300 shadow-lg hover:shadow-black-500/10 flex flex-col w-full wrap-break-word"
-      imgAlt={producto.nombreProducto}
-      imgSrc={producto.imagen}
-    >
+    <Card className="group bg-zinc-900 rounded-xl border border-zinc-800 hover:border-blue-500/50 transition-all duration-300 shadow-lg hover:shadow-black-500/10 flex flex-col w-full wrap-break-word">
+      <div className="w-full max-h-40 overflow-hidden rounded-t-xl">
+        <img
+          src={producto.imagen}
+          alt={producto.nombreProducto}
+          className="w-full h-full object-cover object-center transition-transform duration-300 group-hover:scale-105"
+        />
+      </div>
+
       <h6 className="text-xs font-semibold tracking-tight text-gray-900 dark:text-white">
         Categoria: {producto.categoria}
       </h6>
@@ -74,12 +78,12 @@ const Cards = ({ producto }: CardProductoProps) => {
         <IoHeartOutline />
       </div>
       <div className="flex items-center justify-between">
-        <span className="text-3xl font-bold text-gray-900 dark:text-white">
+        <span className="text-xl font-bold text-gray-900 dark:text-white">
           ${producto.precio}
         </span>
         <Link
           to={`DetalleProducto/${producto.id}`}
-          className="bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 rounded-lg text-sm font-bold transition-colors shadow-md shadow-blue-900/20 active:scale-95"
+          className="bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 rounded-lg text-xs font-bold transition-colors shadow-md shadow-blue-900/20 active:scale-95"
         >
           Ver detalle
         </Link>
