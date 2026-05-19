@@ -32,11 +32,8 @@ const Inicio = () => {
           ))}
         </div>
       ) : (
-        <div className="flex flex-col items-center justify-center py-20 bg-zinc-900/50 rounded-xl border border-dashed border-zinc-800">
-          <i className="bi bi-search text-4xl text-zinc-700 mb-4"></i>
-          <p className="text-zinc-500">
-            No se encontraron productos disponibles.
-          </p>
+        <div className="flex flex-col items-center justify-center py-20 rounded-xl border border-slate-900 text-slate-600 font-bold tracking-wider uppercase text-2xl">
+            No se encontraron productos disponibles
         </div>
       )}
     </section>

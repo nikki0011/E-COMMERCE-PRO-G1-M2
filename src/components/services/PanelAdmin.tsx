@@ -27,7 +27,7 @@ const PanelAdmin = ({producto, fila}:ItemTablaProps) => {
         borrarProducto(producto.id);
         Swal.fire({
           title: "Eliminado",
-          text: `El servicio fue eliminado correctamente`,
+          text: `El producto fue eliminado correctamente`,
           icon: "success",
           background: "#18181b",
           color: "#f4f4f5",
