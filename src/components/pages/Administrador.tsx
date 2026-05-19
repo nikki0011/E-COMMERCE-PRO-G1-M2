@@ -1,4 +1,5 @@
 import PanelAdmin from "../services/PanelAdmin";
+import { Link } from "react-router";
 
 
 const Administrador = () => {
@@ -11,16 +12,16 @@ const Administrador = () => {
             Panel de Administración
           </h1>
           <p className="text-neutral-200 text-sm">
-            Gestiona el catálogo de servicios disponibles.
+            Gestiona el catálogo de productos disponibles.
           </p>
         </div>
-        <a
+        <Link
           className="bg-slate-800 hover:bg-slate-700 text-white px-5 py-2.5 rounded-xl font-bold transition-all shadow-lg shadow-blue-900/20 active:scale-95 flex items-center gap-2"
-          
+          to="/formularioabm"
         >
           <i className="bi bi-plus-lg"></i>
-          Crear Servicio
-        </a>
+          Crear Producto
+        </Link>
       </div>
 
       {/* Contenedor de la Tabla con Scroll Horizontal para móviles */}

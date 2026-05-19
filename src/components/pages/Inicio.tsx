@@ -5,7 +5,7 @@ import { useAppContext } from "../../context/AppContext";
 const Inicio = () => {
   const { productos } = useAppContext();
   return (
-    <section className="space-y-8 animate-fadeIn container  w-full xs:mx-auto   mt-6">
+    <section className="space-y-8 animate-fadeIn container  w-full xs:mx-auto mt-6">
       {/* Encabezado con estilo moderno */}
       <div className="flex flex-col md:flex-row items-center md:items-center justify-center md:justify-center border-b border-zinc-800 pb-5 gap-4 ">
         <div>
@@ -21,26 +21,25 @@ const Inicio = () => {
           />
           <FaSearch className="text-3xl" />
         </div>
-         
       </div>
+      <div className="pl-5">
       {productos.length} productos disponibles
-      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
-      
       </div>
       {productos.length > 0 ? (
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-3 p-5">
           {productos.map((producto) => (
             <Cards key={producto.id} producto={producto} />
           ))}
-      </div>
-):(
-<div className="flex flex-col items-center justify-center py-20 bg-zinc-900/50 rounded-xl border border-dashed border-zinc-800">
+        </div>
+      ) : (
+        <div className="flex flex-col items-center justify-center py-20 bg-zinc-900/50 rounded-xl border border-dashed border-zinc-800">
           <i className="bi bi-search text-4xl text-zinc-700 mb-4"></i>
-          <p className="text-zinc-500">No se encontraron servicios disponibles.</p>
+          <p className="text-zinc-500">
+            No se encontraron productos disponibles.
+          </p>
         </div>
       )}
     </section>
-    
   );
 };
 

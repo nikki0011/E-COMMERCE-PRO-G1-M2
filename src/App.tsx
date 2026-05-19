@@ -10,7 +10,7 @@ import DetalleProducto from "./components/pages/DetalleProducto";
 import { useEffect, useState } from "react";
 import { AppContext } from "./context/AppContext";
 import type { Producto, ProductoFormData } from "./interfaces/productos";
-
+import About from "./components/pages/About";
 
 
 function App() {
@@ -81,9 +81,9 @@ function App() {
               <Route path="/" element={<Inicio></Inicio>} />
               <Route path="/login" element={<Login></Login>} />
               <Route path="/administrador" element={<Administrador></Administrador>} />
-              <Route path="/DetalleProducto" element={<DetalleProducto></DetalleProducto>} />
+              <Route path="/DetalleProducto/:id" element={<DetalleProducto></DetalleProducto>} />
+              <Route path="/nosotros" element={<About></About>} />
               <Route path="*" element={<Error404></Error404>} />
-
             </Routes>
           </main>
           <Footer />

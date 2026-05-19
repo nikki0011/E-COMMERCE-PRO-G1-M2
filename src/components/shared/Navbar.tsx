@@ -47,6 +47,10 @@ const Navbar = () => {
               <NavLink to="/" className={navLinkStyles}>
                 Inicio
               </NavLink>
+              
+              <NavLink to="/nosotros" className={navLinkStyles}>
+                Nosotros
+              </NavLink>
 
               <NavLink to="/administrador" className={navLinkStyles}>
                 Administrador
