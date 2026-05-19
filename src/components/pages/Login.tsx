@@ -1,3 +1,4 @@
+import { Link } from "react-router"; 
 
 const Login = () => {
   return (
@@ -47,7 +48,7 @@ const Login = () => {
               </p>
             </div>
             <div className="text-center text-lg">
-            <p>¿No tienes una cuenta? <a href="/register" className="text-slate-900 hover:underline text-center">Regístrate aquí</a></p>
+            <p>¿No tienes una cuenta? <Link to="/registro" className="text-slate-900 hover:underline text-center">Regístrate aquí</Link></p>
             </div>
           </div>
           <div>

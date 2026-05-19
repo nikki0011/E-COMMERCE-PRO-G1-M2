@@ -16,7 +16,7 @@ const Cards = ({ producto }: CardProductoProps) => {
 
   return (
     <Card
-      className="group bg-zinc-900 rounded-xl border border-zinc-800 hover:border-blue-500/50 transition-all duration-300 shadow-lg hover:shadow-black-500/10 flex flex-col w-full break-words"
+      className="group bg-zinc-900 rounded-xl border border-zinc-800 hover:border-blue-500/50 transition-all duration-300 shadow-lg hover:shadow-black-500/10 flex flex-col w-full wrap-break-word"
       imgAlt={producto.nombreProducto}
       imgSrc={producto.imagen}
     >

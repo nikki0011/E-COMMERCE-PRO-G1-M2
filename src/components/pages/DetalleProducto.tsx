@@ -23,7 +23,7 @@ const DetalleProducto = () => {
     return null;
   }
   return (
-    <div className="container mx-auto px-4 py-8 break-words">
+    <div className="container mx-auto px-4 py-8 wrap-break-word">
       <div>
         <Link
           to="/"
