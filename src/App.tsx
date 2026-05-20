@@ -18,15 +18,17 @@ function App() {
   const usuarioSessionStorage = JSON.parse(
     sessionStorage.getItem("usuarioKey") || "false",
   );
-  const [usuarioLogueado, setUsuarioLogueado] = useState<boolean>(
-    usuarioSessionStorage,
-  );
+  const [usuarioLogueado, setUsuarioLogueado] = useState<boolean>(usuarioSessionStorage);
 
   const productosLocalStorage = JSON.parse(
     localStorage.getItem("productosKey") || "[]",
   );
 
   const [productos, setProductos] = useState<Producto[]>(productosLocalStorage);
+
+  useEffect(() => {
+    sessionStorage.setItem("usuarioKey", JSON.stringify(usuarioLogueado));
+  }, [usuarioLogueado]);
 
   useEffect(() => {
     localStorage.setItem("productosKey", JSON.stringify(productos));

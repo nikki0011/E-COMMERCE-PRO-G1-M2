@@ -51,11 +51,11 @@ const PanelAdmin = ({producto, fila}:ItemTablaProps) => {
         <div className="flex justify-center gap-3">
           <Link
             to={`/administrador/editar/${producto.id}`}
-            className="text-amber-500 hover:text-amber-400 transition-colors flex items-center gap-1 text-xl"
+            className="text-slate-800 hover:text-slate-600 transition-colors flex items-center gap-1 text-xl"
           >
             <LuPencil /> Editar
           </Link>
-          <button className="text-red-500 hover:text-red-400 transition-colors flex items-center gap-1 font-bold text-lg"
+          <button className="text-red-600 hover:text-red-500 transition-colors flex items-center gap-1 font-bold text-lg"
           onClick={eliminarProducto}>
             <LuTrash2 /> Borrar
           </button>
