@@ -18,7 +18,9 @@ function App() {
   const usuarioSessionStorage = JSON.parse(
     sessionStorage.getItem("usuarioKey") || "false",
   );
-  const [usuarioLogueado, setUsuarioLogueado] = useState<boolean>(usuarioSessionStorage);
+  const [usuarioLogueado, setUsuarioLogueado] = useState<boolean>(
+    usuarioSessionStorage,
+  );
 
   const productosLocalStorage = JSON.parse(
     localStorage.getItem("productosKey") || "[]",
@@ -66,6 +68,28 @@ function App() {
     return productos.find((item) => item.id === idProducto);
   };
 
+  const usuariosLocalStorage = JSON.parse(
+    localStorage.getItem("usuariosKey") || "[]",
+  );
+
+  // 2. Dentro de tu función App(), agrega el estado:
+  const [usuarios, setUsuarios] = useState<any[]>(usuariosLocalStorage);
+
+  // 3. Guarda en LocalStorage de forma automática cada vez que cambie el array
+  useEffect(() => {
+    localStorage.setItem("usuariosKey", JSON.stringify(usuarios));
+  }, [usuarios]);
+
+  // 4. Crea la función para añadir un nuevo usuario
+  const registrarUsuario = (nuevoUsuario: any) => {
+  // Opcional: Validar si el email ya existe para no duplicarlo
+  const existe = usuarios.some((u) => u.email === nuevoUsuario.email);
+  if (existe) return false;
+
+  setUsuarios([...usuarios, nuevoUsuario]);
+  return true;
+  };
+
   return (
     <AppContext.Provider
       value={{
@@ -76,6 +100,8 @@ function App() {
         borrarProducto,
         editarProducto,
         buscarProducto,
+        usuarios,
+        registrarUsuario,
       }}
     >
       <BrowserRouter>
@@ -85,22 +111,18 @@ function App() {
             <Routes>
               <Route path="/" element={<Inicio></Inicio>} />
               <Route path="/login" element={<Login></Login>} />
-               <Route path="/administrador" element={<ProtectorRutas />}>
+              <Route path="/administrador" element={<ProtectorRutas />}>
                 <Route index element={<Administrador />} />
                 <Route
                   path="crear"
                   element={
-                    <FormularioABM
-                      titulo={"Crear Producto"}
-                    ></FormularioABM>
+                    <FormularioABM titulo={"Crear Producto"}></FormularioABM>
                   }
                 />
                 <Route
                   path="editar/:id"
                   element={
-                    <FormularioABM
-                      titulo={"Editar Producto"}
-                    ></FormularioABM>
+                    <FormularioABM titulo={"Editar Producto"}></FormularioABM>
                   }
                 />
               </Route>
