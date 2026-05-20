@@ -79,7 +79,7 @@ const Cards = ({ producto }: CardProductoProps) => {
       </div>
       <div className="flex items-center justify-between">
         <span className="text-xl font-bold text-gray-900 dark:text-white">
-          ${producto.precio}
+          ${formatearPrecio(producto.precio)}
         </span>
         <Link
           to={`DetalleProducto/${producto.id}`}
