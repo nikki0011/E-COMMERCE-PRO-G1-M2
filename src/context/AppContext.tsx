@@ -9,6 +9,14 @@ export interface AppContextType {
   borrarProducto: (idProducto: string) => void;
   editarProducto: (idProducto: string, productoEditar: ProductoFormData) => void;
   buscarProducto: (idProducto: string) => Producto | undefined;
+  usuarios: any[];
+registrarUsuario: (nuevoUsuario: any) => boolean;
+}
+
+export interface Usuario {
+  id: string;
+  email: string;
+  password: string;
 }
 
 export const AppContext = createContext<AppContextType | undefined>(undefined);
