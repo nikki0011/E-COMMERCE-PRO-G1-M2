@@ -4,12 +4,16 @@ import Swal from "sweetalert2";
 import { useNavigate, useParams } from "react-router";
 import { useEffect } from "react";
 import { useAppContext } from "../../context/AppContext";
+import { Link } from "react-router";
+import { GiReturnArrow } from "react-icons/gi";
 
 interface FormularioProductoProps {
   titulo: string;
 }
 
-const FormularioProducto: React.FC<FormularioProductoProps>= ({ titulo }: FormularioProductoProps) => {
+const FormularioProducto: React.FC<FormularioProductoProps> = ({
+  titulo,
+}: FormularioProductoProps) => {
   const {
     register,
     handleSubmit,
@@ -142,7 +146,7 @@ const FormularioProducto: React.FC<FormularioProductoProps>= ({ titulo }: Formul
                   PC's Armadas
                 </option>
                 <option value="Componentes" className="bg-zinc-900">
-                  Componentes 
+                  Componentes
                 </option>
               </select>
               <p className="text-red-500 text-xs mt-1 italic">
@@ -203,6 +207,10 @@ const FormularioProducto: React.FC<FormularioProductoProps>= ({ titulo }: Formul
             </button>
           </div>
         </form>
+      </div>
+      <div className="text-slate-900 hover:underline text-center font-semibold mt-6 flex justify-center items-center gap-2">
+        <GiReturnArrow />
+        <Link to="/administrador">Volver al Panel de Administración</Link>
       </div>
     </section>
   );

@@ -20,7 +20,7 @@ const Administrador = () => {
         </div>
         <Link
           className="bg-slate-800 hover:bg-slate-700 text-white px-5 py-2.5 rounded-xl font-bold transition-all shadow-lg shadow-blue-900/20 active:scale-95 flex items-center gap-2"
-          to="/formularioabm"
+          to="crear"
         >
           <LuCirclePlus/>
           Crear Producto
