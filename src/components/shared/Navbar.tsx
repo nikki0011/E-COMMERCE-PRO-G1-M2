@@ -1,10 +1,13 @@
 import { useState } from "react";
-import { LuMenu, LuX, LuCodeXml, LuLogOut } from "react-icons/lu";
+import { LuMenu, LuX, LuLogOut } from "react-icons/lu";
 import { AiOutlineDoubleLeft } from "react-icons/ai";
-import { Link, NavLink } from "react-router";
+import { Link, NavLink, useNavigate } from "react-router";
+import { useAppContext } from "../../context/AppContext";
 
 const Navbar = () => {
- const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { usuarioLogueado, setUsuarioLogueado } = useAppContext();
+  const navegacion = useNavigate();
 
   const navLinkStyles = ({ isActive }: { isActive: boolean }) =>
     `block py-2 px-3 transition-colors duration-200 md:p-0 ${
@@ -13,13 +16,18 @@ const Navbar = () => {
         : "text-zinc-300 hover:text-neutral-400"
     }`;
 
+  const logout = () => {
+    setUsuarioLogueado(false);
+    navegacion("/");
+  };
+
   return (
     <nav className="bg-neutral-600 text-zinc-100 text-lg py-3 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="shrink-0 flex items-center gap-2 text-xl tracking-wider">
-           <AiOutlineDoubleLeft className="text-slate-100 text-2xl" />
+            <AiOutlineDoubleLeft className="text-slate-100 text-2xl" />
             <Link to={"/"} className="font-bold uppercase text-2xl">
               hard stocks{" "}
             </Link>
@@ -47,19 +55,30 @@ const Navbar = () => {
               <NavLink to="/" className={navLinkStyles}>
                 Inicio
               </NavLink>
-              
-              <NavLink to="/nosotros" className={navLinkStyles}>
+               <NavLink to="/nosotros" className={navLinkStyles}>
                 Nosotros
               </NavLink>
-
+              
+               {usuarioLogueado ? (
+                <>
               <NavLink to="/administrador" className={navLinkStyles}>
                 Administrador
               </NavLink>
-
+                  {/* agregamos el boton de logout */}
+                  <button
+                    onClick={logout}
+                    className="flex items-center gap-2 bg-zinc-800 hover:bg-red-900/40 text-red-400 px-4 py-2 rounded-md text-sm font-medium transition-all border border-zinc-700 hover:border-red-500/50"
+                  >
+                    <LuLogOut />
+                    Logout
+                  </button>
+                </>
+              ) : (
               <NavLink to="/login" className={navLinkStyles}>
                 Login
               </NavLink>
-            </div>
+              )}
+           </div>
           </div>
         </div>
       </div>
@@ -81,6 +100,14 @@ const Navbar = () => {
             Inicio
           </NavLink>
 
+          <NavLink to="/nosotros" className={navLinkStyles}
+            onClick={() => setIsMenuOpen(false)}
+          >
+                Nosotros
+              </NavLink>
+           
+            {usuarioLogueado ? (
+            <>
           <NavLink
             to="/administrador"
             className={navLinkStyles}
@@ -89,6 +116,15 @@ const Navbar = () => {
             Administrador
           </NavLink>
 
+          <button
+                onClick={() => { logout(); setIsMenuOpen(false); }}
+                className="flex items-center gap-2 w-full text-left px-3 py-2 text-red-400 font-medium hover:bg-red-900/20 rounded-md transition-colors"
+              >
+                <LuLogOut />
+                Logout
+              </button>
+            </>
+          ) : (
           <NavLink
             to="/login"
             className={navLinkStyles}
@@ -96,11 +132,11 @@ const Navbar = () => {
           >
             Login
           </NavLink>
+          )}
         </div>
       </div>
     </nav>
-    );
-
+  );
 };
 
 export default Navbar;

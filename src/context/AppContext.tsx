@@ -2,8 +2,8 @@ import { createContext, useContext } from "react";
 import type { Producto, ProductoFormData } from "../interfaces/productos";
 
 export interface AppContextType {
-//   usuarioLogueado: boolean;
-//   setUsuarioLogueado: React.Dispatch<React.SetStateAction<boolean>>;
+  usuarioLogueado: boolean;
+  setUsuarioLogueado: React.Dispatch<React.SetStateAction<boolean>>;
   productos: Producto[];
   crearProducto: (nuevoProducto: ProductoFormData) => void;
   borrarProducto: (idProducto: string) => void;
