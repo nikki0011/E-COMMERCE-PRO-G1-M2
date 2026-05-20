@@ -3,11 +3,11 @@ import nair from "../../assets/Nair.jpeg";
 import gaby from "../../assets/Gaby.jpeg";
 
 
-interface StatItem {
-  id: number;
-  value: string;
-  label: string;
-}
+// interface StatItem {
+//   id: number;
+//   value: string;
+//   label: string;
+// }
 
 interface TeamMember {
   id: number;
